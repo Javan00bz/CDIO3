@@ -28,7 +28,6 @@ public class Main {
 	private int startingMoney;
 	public static void main(String[] args) {
 
-		GUI_Player hej = new GUI_Player();
 		Main main = new Main();
 		GUI_Field g = new GUI_Street();
 		g.setTitle("TITLE1");
@@ -65,7 +64,7 @@ public class Main {
 			Players[i]  = new Player(playerName, 1, startingMoney);
 		}
 		for(int i=1; i <= amountOfPlayers; i++) {
-			GUI.addPlayer(Players[i].getName(), Players[i].getAccount().getValue());
+			gui.addPlayer(Players[i].getName(), Players[i].getAccount().getValue());
 		}
 		
 	}
