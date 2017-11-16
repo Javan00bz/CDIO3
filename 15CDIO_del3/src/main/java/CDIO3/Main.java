@@ -58,13 +58,14 @@ public class Main {
 		default: startingMoney = 20;
 		}
 		
-		for(int i=1; i <= amountOfPlayers; i++) {
-			String playerName = gui.getUserString("Player " + i + " Enter your name" );
+		for(int i=0; i < amountOfPlayers; i++) {
+			int j = 1;
+			String playerName = gui.getUserString("Player " + j + " Enter your name" );
 			Players[i]  = new Player(playerName, 1, startingMoney);
 			GUI_Players[i] = new GUI_Player(playerName, startingMoney);
 			gui.addPlayer(GUI_Players[i]);
+			j++;
 		}
-		
 	}
 
 
