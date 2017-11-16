@@ -32,6 +32,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/15_del1/src/spil/GUI.jar"/>
+	<classpathentry exported="true" kind="lib" path="/15_del1/src/spil/GUI.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

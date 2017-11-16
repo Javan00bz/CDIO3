@@ -13,7 +13,7 @@ import gui_fields.GUI_Field;
 import gui_fields.GUI_Street;
 import gui_fields.GUI_Player;
 import gui_fields.GUI_Start;
-import gui_main.*;
+import gui_main.GUI;
 import desktop_resources.*;
 
 
@@ -24,7 +24,12 @@ public class Main {
 	private Player Player2;
 	private Player Player3;
 	private Player Player4;
-	Player[] Players = {Player1, Player2, Player3, Player4};
+	private Player[] Players = {Player1, Player2, Player3, Player4};
+	private GUI_Player GUI_Player1;
+	private GUI_Player GUI_Player2;
+	private GUI_Player GUI_Player3;
+	private GUI_Player GUI_Player4;
+	private GUI_Player[] GUI_Players = {GUI_Player1, GUI_Player2, GUI_Player3, GUI_Player4};
 	private int startingMoney;
 	public static void main(String[] args) {
 
@@ -36,19 +41,13 @@ public class Main {
 		f[0] = g;
 		new GUI(f);
 		main.startGame();
-
-
-
-
-
-
 		initializeGUI();
 
 
 	}
 	public void startGame() {
 		gui.showMessage("Welcome");
-		int amountOfPlayers = gui.getUserInteger("Hvor mange spillere er i?", 2, 4);
+		int amountOfPlayers = gui.getUserInteger("How many players are you", 2, 4);
 		switch (amountOfPlayers) {
 		case 2: startingMoney = 20;
 		break;
@@ -62,9 +61,8 @@ public class Main {
 		for(int i=1; i <= amountOfPlayers; i++) {
 			String playerName = gui.getUserString("Player " + i + " Enter your name" );
 			Players[i]  = new Player(playerName, 1, startingMoney);
-		}
-		for(int i=1; i <= amountOfPlayers; i++) {
-			gui.addPlayer(Players[i].getName(), Players[i].getAccount().getValue());
+			GUI_Players[i] = new GUI_Player(playerName, startingMoney);
+			gui.addPlayer(GUI_Players[i]);
 		}
 		
 	}
