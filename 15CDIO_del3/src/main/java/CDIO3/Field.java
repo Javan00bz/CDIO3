@@ -3,7 +3,7 @@ package CDIO3;
 public class Field {
 	String nameoffield;
 
-	public Field(String nameoffield, int price, int tax) {
+	public Field(String nameoffield) {
 		this.nameoffield = nameoffield;
 	}
 	
