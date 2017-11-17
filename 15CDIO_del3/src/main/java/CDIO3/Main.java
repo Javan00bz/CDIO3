@@ -25,11 +25,6 @@ public class Main {
 	private Player Player3;
 	private Player Player4;
 	private Player[] Players = {Player1, Player2, Player3, Player4};
-	private GUI_Player GUI_Player1;
-	private GUI_Player GUI_Player2;
-	private GUI_Player GUI_Player3;
-	private GUI_Player GUI_Player4;
-	private GUI_Player[] GUI_Players = {GUI_Player1, GUI_Player2, GUI_Player3, GUI_Player4};
 	private int startingMoney;
 	public static void main(String[] args) {
 
@@ -61,9 +56,8 @@ public class Main {
 		for(int i=0; i < amountOfPlayers; i++) {
 			int j = 1;
 			String playerName = gui.getUserString("Player " + j + " Enter your name" );
-			Players[i]  = new Player(playerName, 1, startingMoney);
-			GUI_Players[i] = new GUI_Player(playerName, startingMoney);
-			gui.addPlayer(GUI_Players[i]);
+			Players[i]  = new Player(playerName, startingMoney, 1);
+			gui.addPlayer(Players[i]);
 			j++;
 		}
 	}
