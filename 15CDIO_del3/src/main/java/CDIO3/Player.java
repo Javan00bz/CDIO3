@@ -1,33 +1,23 @@
 package CDIO3;
 
 import CDIO3.Account;
+import gui_fields.GUI_Player;
 
 //Klasse for spillets spillere
-public class Player {
+public class Player extends GUI_Player {
 	
-	private String name;
-	int position;
-	private Account Account;
+	private int position;
+	private Account account;
 	
-	//Konstruktør. Laver en spiller med navn, placering og opretter en ny konto med en givet værdi.
-	public Player(String userString, int p, int i) {
-		this.Account = new Account(i);
-		this.name = userString;
-		this.position = p;
-	}
-	
-	public Account getAccount() {
-		return Account;
+	public Player(String name, int balance, int position) {
+		super(name, balance);
+		this.position = position;
+		this.account = new Account(balance);
 	}
 
-	public String getName()
-	{
-		return name;
-	}
 	
-	public void setName(String newName)
-	{
-		name = newName;
+	public Account getAccount() {
+		return account;
 	}
 	
 	public int getPosition()
