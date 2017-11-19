@@ -14,7 +14,6 @@ import gui_fields.GUI_Street;
 import gui_fields.GUI_Player;
 import gui_fields.GUI_Start;
 import gui_main.GUI;
-import desktop_resources.*;
 
 
 public class Main {
